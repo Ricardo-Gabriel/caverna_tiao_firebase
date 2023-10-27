@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <p><NuxtLink to="/secret">Secret</NuxtLink></p>
+  <div class="bg-blue-300 text-center h-full">
     <button
       @click="signIn"
       v-if="!firebaseUser"
@@ -16,10 +15,10 @@
       Logout
     </button>
     <div v-if="firebaseUser">
-      <pre>
-        {{ firebaseUser }}
-        
-      </pre>
+      <div class="flex flex-row bg-blue-400 w-full">
+        <div class="h-[200px] w-[200px] bg-red-500">Foto</div>
+        <div class="h-[full] w-[800px] bg-blue-500">{{ firebaseUser }}</div>
+      </div>
     </div>
     <div v-if="!firebaseUser">
       <pre>Não tem ninguem em casa !!</pre>
