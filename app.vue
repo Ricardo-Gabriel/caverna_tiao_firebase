@@ -4,6 +4,7 @@
     <button @click="signOut" class="button is-danger is-rounded">Logout</button>
     <pre>
       {{ credentials }}
+      teste
     </pre>
   </div>
 </template>
