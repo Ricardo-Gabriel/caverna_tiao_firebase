@@ -9,20 +9,19 @@
 </template>
 
 <script setup>
+const credentials = ref();
+
 const signIn = async () => {
   const email = "teste2@email.com";
   const password = "123456";
   const credentials = await signInUser(email, password);
-  console.log("Credenciais do Usuario", credentials);
 };
 
 const signOut = async () => {
   const credentials = await singOutUser();
-  console.log("Credenciais do Usuario", credentials);
 };
 
-onMounted(async () => {
-  /**
+/**
    * Teste Criação de Usuario (ok )
     console.log("---APP---");
     const email = "teste3@email.com";
@@ -30,7 +29,6 @@ onMounted(async () => {
     const credentials = await createUser(email, password);
     console.log("Credenciais do Usuario", credentials);
   */
-});
 </script>
 
 <script></script>
