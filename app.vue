@@ -1,20 +1,35 @@
 <template>
   <div>
-    <button @click="signIn" class="button is-primary is-rounded">Login</button>
-    <button @click="signOut" class="button is-danger is-rounded">Logout</button>
-    <ClientOnly>
+    <button
+      @click="signIn"
+      v-if="!firebaseUser"
+      class="button is-primary is-rounded"
+    >
+      Login
+    </button>
+    <button
+      @click="signOut"
+      v-if="firebaseUser"
+      class="button is-danger is-rounded"
+    >
+      Logout
+    </button>
+    <div v-if="firebaseUser">
       <pre>
-      {{ credentials }}
+      {{ firebaseUser }}
       
     </pre
       >
-    </ClientOnly>
+    </div>
+    <div v-if="!firebaseUser">
+      <pre>Não tem ninguem em casa !!</pre>
+    </div>
   </div>
 </template>
 
 <script setup>
 const credentials = ref();
-
+const firebaseUser = useFirebaseUser();
 const signIn = async () => {
   const email = "teste2@email.com";
   const password = "123456";
