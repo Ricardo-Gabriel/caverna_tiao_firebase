@@ -2,10 +2,13 @@
   <div>
     <button @click="signIn" class="button is-primary is-rounded">Login</button>
     <button @click="signOut" class="button is-danger is-rounded">Logout</button>
-    <pre>
+    <ClientOnly>
+      <pre>
       {{ credentials }}
-      teste
-    </pre>
+      
+    </pre
+      >
+    </ClientOnly>
   </div>
 </template>
 

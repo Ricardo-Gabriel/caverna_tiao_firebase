@@ -43,9 +43,10 @@ export const initUser = async () => {
 
       const uid = user.uid;
 
-      console.log(user);
+      console.log("Auth changed: ", user);
       // ...
     } else {
+      console.log("Auth changed: ", user);
     }
   });
 };
